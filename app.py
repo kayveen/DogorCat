@@ -77,8 +77,7 @@ def create_app():
     load__model()
     return app
 
-"""
+
 if __name__ == '__main__':
-    load__model()
+    app = create_app()
     app.run(debug=True)
-"""
