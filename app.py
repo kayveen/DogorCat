@@ -73,6 +73,12 @@ def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 
+def create_app():
+    load__model()
+    return app
+
+"""
 if __name__ == '__main__':
     load__model()
     app.run(debug=True)
+"""
