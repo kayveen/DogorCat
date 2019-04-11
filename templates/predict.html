@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <title>Dog or Cat </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-  <h4 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Cat & Dog Classification</h4>
+  <h4 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Cat or Dog </h4>
 <div style="width: 90%; margin: auto; text-align: center">
     <img src="{{ url_for('send_file', filename=image_file_name)}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
     <p style="font-style: italic">{{ image_file_name }}</p>
 
-    <h3 style="margin-top: 40px"><b>Predicted Label: <span style="color: green">{{ label }}</span></b></h3>
-    <h3><b>Accuracy : <span style="color: green;">{{ accuracy }} %</span></b></h3>
+
+    <h3><b>I'm <span style="color: green;">{{ accuracy }} %</span> sure this is a
+        <span style="color: red;">{{ label }}</span></b></h3>
      <a href="/">Back to Home</a>
 </div>
 </body>

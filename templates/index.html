@@ -5,6 +5,7 @@
   <title>Dog or Cat ?</title>
       <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -42,25 +43,29 @@
 </style>
 
 <body>
-<header class="navbar">
+<div class="container" style="margin: auto;width;50%; text-align: center; margin-top: 100px;  text-transform: uppercase">
 
 
-  <h3 style="margin: auto;width: 80%; text-align: center; margin-top: 20px;  text-transform: uppercase">Dog or Cat ?</h3>
+  <h3 style="margin: auto;width: 80%; text-align: center; margin-top: 100px;  text-transform: uppercase">Dog or Cat ?</h3>
 
    <div style="text-align: center; margin-top: 20px">
        <img style="max-width: 600px" src="{{ url_for('static', filename='img/cat_dog.jpg') }}"/>
    </div>
 
-  <form action="/upload" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;" onsubmit="showloading()">
-      <span class="btn btn-default btn-file">
-        Select Image <input type="file" name="image">
-    </span><br><br>
-        <input type="submit" value="Upload" class="btn btn-primary">
+  <form action="/upload" method="post" enctype="multipart/form-data" style="margin-top: 50px; width: 60%; text-align: center; margin: auto;" onsubmit="showloading()">
+      <span class="text-left btn btn-default btn-file">
+        Upload Image <input type="file" name="image">
+    </span>
+
+
+      <span class="text-right">
+        <input type="submit" value="Predict" class="btn btn-primary">
+      </span>
   </form>
     <div style="text-align: center">
         <img id="loading_image" style="display: none" src="{{ url_for('static', filename='img/loading_.gif')}}">
     </div>
-</header>
+</div>
 
 </body>
 </html>
