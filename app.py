@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, send_from_directory
 from keras_preprocessing import image
+from keras.models import load_model
 import numpy as np
 import tensorflow as tf
 
@@ -17,14 +18,15 @@ def load__model():
     """Load model once at running time for all the predictions"""
     print('[INFO] : Model loading ................')
     global model
-    model = tf.keras.models.load_model(MODEL_FOLDER + '/catsVSdogs.h5')
+    # model = tf.keras.models.load_model(MODEL_FOLDER + '/catsVSdogs.h5')
+    model = load_model(MODEL_FOLDER + '/cat_dog_classifier.h5')
     global graph
     graph = tf.get_default_graph()
     print('[INFO] : Model loaded')
 
 
 def predict(fullpath):
-    data = image.load_img(fullpath, target_size=(150, 150, 3))
+    data = image.load_img(fullpath, target_size=(128, 128, 3))
     # (150,150,3) ==> (1,150,150,3)
     data = np.expand_dims(data, axis=0)
     # Scaling
