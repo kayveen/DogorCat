@@ -32,7 +32,8 @@ I
 * Heroku
 
 
-###Credit
+### Credit
+
 Credit to this 2 repository I used to build this. Special
 credit to @LukaszMalucha for his help
 
